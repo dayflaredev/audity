@@ -38,10 +38,9 @@ export class AuditLogService {
 
         return this.prisma.auditLog.findMany({
             where,
-            take: limit,
-            skip: offset,
+            take: Number(limit),
+            skip: Number(offset),
             orderBy: { createdAt: orderBy },
         });
     }
-
 }
